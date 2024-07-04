@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            border: 0px solid whitesmoke;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 244, 163, 0.8) 0%,
+                rgba(150, 248, 255, 0.8) 30%,
+                rgba(229, 156, 255, 0.8) 60%,
+                rgba(51, 255, 187, 0.8) 100%
+              );
+            margin: 0;
+            font-family: 'Ink Free', sans-serif;
+        }
+        
+        .calculator {
+            border: 0px solid whitesmoke;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 123, 145, 0.8) 0%,
+                rgba(255, 187, 51, 0.8) 30%,
+                rgba(145, 255, 123, 0.8) 60%,
+                rgba(51, 255, 187, 0.8) 100%
+              );
+              color: #000; /* black text */
+              border: none;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .display {
+            width: 95%;
+            height: 50px;
+            font-size: 2rem;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .btn {
+            font-size: 40px;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: black;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 209, 160, 0.8) 0%,
+                rgba(197, 255, 221, 0.8) 30%,
+                rgba(255, 255, 163, 0.8) 60%,
+                rgba(243, 178, 255, 0.8) 100%
+              );
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ddd;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" class="display" readonly>
+        <div class="buttons">
+            <button class="btn" onclick="getNumber(1)">1</button>
+            <button class="btn" onclick="getNumber(2)">2</button>
+            <button class="btn" onclick="getNumber(3)">3</button>
+            <button class="btn" onclick="getOp('+')">+</button>
+            <button class="btn" onclick="getNumber(4)">4</button>
+            <button class="btn" onclick="getNumber(5)">5</button>
+            <button class="btn" onclick="getNumber(6)">6</button>
+            <button class="btn" onclick="getOp('-')">-</button>
+            <button class="btn" onclick="getNumber(7)">7</button>
+            <button class="btn" onclick="getNumber(8)">8</button>
+            <button class="btn" onclick="getNumber(9)">9</button>
+            <button class="btn" onclick="getOp('*')">x</button>
+            <button class="btn" onclick="getNumber('.')">.</button>
+            <button class="btn" onclick="getNumber(0)">0</button>
+            <button class="btn" onclick="equal()">=</button>
+            <button class="btn" onclick="getOp('/')">/</button>
+            <button class="btn" onclick="clearFun()">C</button>
+            <button class="btn" onclick="deleteNum()">Del</button>
+            <button class="btn" onclick="exitFun()">Exit</button>
+        </div>
+    </div>
+    <script src="calculatorscript.js"></script>
+</body>
+</html>
